@@ -86,6 +86,17 @@ public:
 		}
 		return *this;
 	}
+	template<typename T>
+	void printA(const T &t)
+	{
+		Print(t);
+	}
+	template <typename T,typename... Args>
+	void printA(const T &t, const Args... rest)
+	{
+		printA(t);
+		return printA(rest...);
+	}
 
 	///@brief Render the first empty table unit with the specified value.
 	template <typename T>
