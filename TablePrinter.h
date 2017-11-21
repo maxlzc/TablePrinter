@@ -41,11 +41,11 @@ public:
 		if(filename.length()==0)
 		{
 			pOut = &cout;
-			EnableExtendedAsciiChar(true);
+			EnableExtendedAsciiChar(false);
 		}
 		else 
 		{
-			pOut = new ofstream(filename, ofstream::app);
+			pOut = new ofstream(filename, ofstream::out);
 			//It's a pity that normal files don't support extended ascii codes.
 			EnableExtendedAsciiChar(false);
 		}
